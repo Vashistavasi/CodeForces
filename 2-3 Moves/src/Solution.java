@@ -12,7 +12,24 @@ static FastScanner s;
 public static void main(String[] args) throws Exception {
 	pw=new PrintWriter(System.out);
 	s=new FastScanner(System.in);
-	
+	int t=s.nextInt();
+	while(t-->0) {
+		int n=s.nextInt();
+		if(n%3==0)
+			pw.println(n/3);
+		else if(n%3==1) {
+			int num=((n+2)/3)+1;
+			int num2=((n-4)/3)+2;
+			if(num2>0 && n>=4)
+				num=Math.min(num, num2);
+			
+				pw.println(num);
+		}
+		else {
+			int num=(n-1)/3;
+			pw.println(num+1);
+		}
+	}
 	
 	
 pw.flush();	
